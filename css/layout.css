@@ -1,0 +1,144 @@
+.inner {
+    max-width: 1410px;
+    margin: 0 auto;
+}
+
+.default {
+    padding: 12rem 0;
+}
+
+.default .title {
+    max-width: 1290px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.default .title h2 {
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.default .title h3 {
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
+.default .title p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.wheel {
+    font-size: 12px;
+    color: var(--white-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.wheel::before {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 4px;
+    height: 4px;
+    background: var(--white-color);
+    border-radius: 50%;
+    animation: scroll 2s infinite;
+}
+
+.wheel::after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    margin-top: 16px;
+    width: 1px;
+    height: 80px;
+    background: var(--white-color);
+    opacity: 0.5;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, 80px);
+    }
+
+    100% {
+        transform: translate(-50%, 80px) scale(12);
+        opacity: 0.1;
+    }
+}
+
+.default_btn {
+    position: relative;
+    z-index: 99;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 4rem;
+    height: 6rem;
+    border: 3px solid var(--main-color);
+    border-radius: 4rem;
+    color: var(--main-color);
+    font-size: 1.4rem;
+    overflow: hidden;
+}
+
+.default_btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    height: 0;
+    background: var(--main-color);
+
+}
+
+.default_btn:hover {
+    color: var(--white-color);
+    border: 3px solid var(--white-color);
+    opacity: 1;
+}
+
+.default_btn:hover::before {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+
+}
+
+.default_btn::after {
+    content: "";
+    margin-left: 8px;
+    width: 1.4rem;
+    height: 1.4rem;
+    background: url(../images/arrow-right.svg)no-repeat center center/2rem;
+}
+
+.default_btn:hover::after {
+    background: url(../images/arrow-right-w.svg)no-repeat center center/2rem;
+}
+
+
+.w_inner {
+    max-width: calc((100% - 141rem)/2 + 141rem);
+}
+
+.w_inner.r {
+    margin-left: auto;
+}
+
+.w_inner.l {
+    margin-right: auto;
+}
